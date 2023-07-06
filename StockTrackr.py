@@ -1,36 +1,31 @@
-import yfinance as yf
-
+from alpha_vantage.timeseries import TimeSeries
 import matplotlib.pyplot as plt
-import seaborn
+import requests
+import os
+
+def main():
+    ts = TimeSeries(key='ALPHAVANTAGE_API_KEY')
+    data, meta_data = ts.get_daily(symbol='AAPL', outputsize='full')
+
+    # Extract the dates and closing prices from the data
+    dates = []
+    closing_prices = []
+
+    # Data is returned in reverse chronological order, so we iterate in reverse
+    for date in reversed(list(data.keys())):
+        dates.append(date)
+        closing_prices.append(float(data[date]['4. close']))
+
+# Plotting the data
+    plt.plot(dates, closing_prices)
+    plt.xlabel('Date')
+    plt.ylabel('Closing Price ($)')
+    plt.title('AAPL Stock Price')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.show()
 
 if __name__ == "__main__":
-    msft = yf.Ticker("MSFT")
+    main()
 
-    # get stock info
-    print(msft.info)
-
-    # get historical market data
-    hist = msft.history(period="5d")
-        
-        
-    data_df = yf.download("AAPL", start="2020-02-01", end="2020-03-20")
-    data_df.to_csv('aapl.csv')
-    # x axis values
-    x = [1,2,3]
-    # corresponding y axis values
-    y = [2,4,1]
-    
-    # plotting the points 
-    plt.plot(x, y)
-    
-    # naming the x axis
-    plt.xlabel('x - axis')
-    # naming the y axis
-    plt.ylabel('y - axis')
-    
-    # giving a title to my graph
-    plt.title('My first graph!')
-    
-    # function to show the plot
-    plt.show()
 

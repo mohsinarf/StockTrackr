@@ -2,7 +2,7 @@
 
 # StockTrackr
 
-StockTrackr is a Python-based application that utilizes the Yahoo Finance API and QML (Qt Meta-Object Language) for tracking and analyzing stock market data.
+StockTrackr is a Python-based application that utilizes the Alpha Vantage API and QML (Qt Meta-Object Language) for tracking and analyzing stock market data.
 
 ## Features
 
@@ -17,7 +17,7 @@ StockTrackr is a Python-based application that utilizes the Yahoo Finance API an
 - Python 3.x
 - PyQt5 (Qt for Python)
 - PySide2 (Qt for Python)
-- Yahoo Finance API (yfinance)
+- Alpha Vantage API (yfinance)
 - Matplotlib
 - NumPy
 
