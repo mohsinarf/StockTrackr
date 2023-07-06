@@ -13,9 +13,9 @@ StockTrackr is a Python-based application that utilizes the Alpha Vantage API an
 ## Requirements
 
 - Python 3.x
+- Alpha Vantage API 
 - PyQt5 (Qt for Python)
 - PySide2 (Qt for Python)
-- Alpha Vantage API (yfinance)
 - Matplotlib
 - NumPy
 
