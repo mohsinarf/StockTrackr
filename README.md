@@ -1,7 +1,5 @@
 # StockTrackr
 
-# StockTrackr
-
 StockTrackr is a Python-based application that utilizes the Alpha Vantage API and QML (Qt Meta-Object Language) for tracking and analyzing stock market data.
 
 ## Features
